@@ -1,0 +1,43 @@
+.container {
+    background-color: #dedede;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) minmax(200px, 1fr);
+    grid-template-rows: 20% 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main";
+}
+
+.container > div {
+    border: 1px solid black;
+}
+
+.header {
+    grid-area: header;
+    background-color: #528a52;
+
+
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #e84c4c;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:  13fr repeat(10, 9fr);
+}
+
+.sb-item {
+    display: grid;
+    border: 1px solid black;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.main {
+    grid-area: main;
+    background-color: #29529d;
+}
