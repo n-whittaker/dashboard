@@ -17,16 +17,81 @@
 .header {
     grid-area: header;
     background-color: #528a52;
-
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
 
 }
+
+.top-row-header, .bottom-row-header {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.header-subgrid {
+    display: grid;
+    grid-auto-flow: column;
+}
+.search-grid {
+    grid-template-columns: 50px 1fr;
+    /*gap: 50px;*/
+    width: 500px;
+}
+
+.search-grid > label {
+    visibility: hidden;
+}
+
+.search-bar {
+    width: 100%;
+}
+
+
+
+.account-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.profile-welcome-grid {
+    grid-template-columns: 10fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: row;
+    height: 100px;
+}
+
+.action-btn-grid {
+    grid-template-columns: repeat(3, 1fr);
+    width: 300px;
+    height: 40px;
+    gap: 30px;
+}
+
+.profile-img-container {
+    grid-area: 1 / 2 / 1 / 3;
+}
+
+.welcome-text {
+    grid-area: 2 / 3 / 1 / 2;
+}
+
+.welcome-username {
+    grid-area: 2 / 3 / 2 / 3;
+}
+
+
+
 
 .sidebar {
     grid-area: sidebar;
     background-color: #e84c4c;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows:  13fr repeat(10, 9fr);
+    grid-template-rows:  13fr repeat(10, 9fr) 15fr;
 }
 
 .sb-item {
