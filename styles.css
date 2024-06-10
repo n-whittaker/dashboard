@@ -1,108 +1,153 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: none;
+
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*       Reset is above         */
+
+
+:root {
+    font-family: Helvetica, sans-serif;
+    color: white;
+}
+
 .container {
-    background-color: #dedede;
+
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: minmax(200px, 300px) minmax(200px, 1fr);
-    grid-template-rows: 20% 1fr;
-    grid-template-areas:
-        "sidebar header"
-        "sidebar main";
+
+    grid-template-columns: minmax(244px, 300px) 2fr 2fr;
+    grid-template-rows: 1fr 2fr 2fr;
 }
 
 .container > div {
     border: 1px solid black;
 }
 
-.header {
-    grid-area: header;
-    background-color: #528a52;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-auto-flow: column;
-
-}
-
-.top-row-header, .bottom-row-header {
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
-}
-
-.header-subgrid {
-    display: grid;
-    grid-auto-flow: column;
-}
-.search-grid {
-    grid-template-columns: 50px 1fr;
-    /*gap: 50px;*/
-    width: 500px;
-}
-
-.search-grid > label {
-    visibility: hidden;
-}
-
-.search-bar {
-    width: 100%;
-}
-
-
-
-.account-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.profile-welcome-grid {
-    grid-template-columns: 10fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-auto-flow: row;
-    height: 100px;
-}
-
-.action-btn-grid {
-    grid-template-columns: repeat(3, 1fr);
-    width: 300px;
-    height: 40px;
-    gap: 30px;
-}
-
-.profile-img-container {
-    grid-area: 1 / 2 / 1 / 3;
-}
-
-.welcome-text {
-    grid-area: 2 / 3 / 1 / 2;
-}
-
-.welcome-username {
-    grid-area: 2 / 3 / 2 / 3;
-}
-
-
-
+/* ----------------SIDEBAR--------------- */
 
 .sidebar {
-    grid-area: sidebar;
-    background-color: #e84c4c;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows:  13fr repeat(10, 9fr) 15fr;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    background-color: #5a7cff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 60px;
+    padding: 20px 0;
 }
 
-.sb-item {
+.sidebar-header {
+    /*border: 1px solid black;*/
     display: grid;
-    border: 1px solid black;
-    grid-auto-flow: column;
-    align-items: center;
-    justify-content: space-evenly;
+    grid-template-columns: 1fr 3fr;
+    padding: 5px 0 5px 10px;
+
+    gap: 12px;
+
 }
 
-.main {
-    grid-area: main;
-    background-color: #29529d;
+.sidebar-header > p {
+    font-size: 2rem;
+    align-self: center;
+    justify-self: flex-start;
 }
+
+.sidebar-group {
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    gap: 20px;
+}
+
+.sidebar-item {
+    /*border: 1px solid black;*/
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+
+}
+
+.sidebar-item > p {
+    font-size: 1.4rem;
+    align-self: center;
+    justify-self: flex-start;
+    padding-left: 30px;
+}
+
+
+.sidebar-header-icon, .sidebar-icon {
+    justify-self: center;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(180deg) brightness(200%) contrast(100%);
+}
+
+.sidebar-header-icon {
+    width: 50px;
+    justify-self: center;
+
+}
+
+.sidebar-icon {
+    width: 30px;
+}
+
+
+
+
+
+/* --------------HEADER----------------- */
+
+.header {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+
+/* ---------------ARTICLE------------------ */
+
+.article {
+    grid-column: 2 / 4;
+    grid-row: 2 / 4;
+}
+
